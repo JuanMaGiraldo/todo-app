@@ -1,0 +1,21 @@
+name: Todo app - CI
+
+on: 
+  pull_request:
+    types: ["opened", "synchronize"]
+      
+
+jobs:
+  build-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.9.0
+      - name: "Build the project"
+        run: npm ci
+      - name: "Run the tests"
+        run: npm test
+      - name: "Run linter"
+        run: npm run lint
