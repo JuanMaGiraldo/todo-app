@@ -33,14 +33,15 @@ function App() {
 
   return (
     <div className="App">
-      <h1>You have {activeTodos} todos</h1>
+      <h1>Hello client</h1>
+      <h1>You have: {activeTodos} todos</h1>
 
       <form onSubmit={handleSubmit}>
         <label>
           <input
             className="input-todo"
             type="text"
-            placeholder="Add new to do"
+            placeholder="Add new todo"
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
           />
